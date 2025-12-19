@@ -8,8 +8,14 @@ import Installed from './components/Installed';
 import Commissions from './components/Commissions';
 
 const App: React.FC = () => {
+  // Get the base path from the current location
+  // For GitHub Pages: /12-18v2, for local dev: /
+  // Check if we're on GitHub Pages by looking at the pathname
+  const isGitHubPages = window.location.pathname.startsWith('/12-18v2');
+  const basename = isGitHubPages ? '/12-18v2' : '/';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen flex flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
