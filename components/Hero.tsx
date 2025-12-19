@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { HERO_IMAGES } from '../constants';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  title?: string;
+  subtitle?: string;
+}
+
+const Hero: React.FC<HeroProps> = ({ 
+  title = 'ISAAC ANDERSON ART', 
+  subtitle = 'Modern Fine Art Portfolio' 
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -41,10 +49,10 @@ const Hero: React.FC = () => {
       {/* Overlay Text - Positioned at bottom */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-end pb-24 md:pb-32 text-center text-white px-4">
         <h1 className="text-4xl md:text-6xl font-light tracking-[0.2em] mb-4 drop-shadow-md">
-          ISAAC ANDERSON ART
+          {title}
         </h1>
         <p className="text-sm md:text-lg font-light tracking-widest uppercase text-gray-200 drop-shadow-sm">
-          Modern Fine Art Portfolio
+          {subtitle}
         </p>
       </div>
       
