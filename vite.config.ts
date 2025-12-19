@@ -8,5 +8,5 @@ export default defineConfig(({ command }) => ({
   // GitHub Pages deployment - use repository name as base path
   // If your repo is at github.com/username/isaac-anderson-art, use '/isaac-anderson-art/'
   // If it's a user/organization page (github.com/username/username.github.io), use '/'
-  base: command === 'build' ? '/isaac-anderson-art/' : '/',
+  base: command === 'build' ? '/12-18v2/' : '/',
 }));
